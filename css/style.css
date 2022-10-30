@@ -1,7 +1,11 @@
 :root {
-    --background: rgba(200, 200, 200, 0.8);
+    --background: rgb(168, 168, 168);
     --font: Verdana, Geneva, Tahoma, sans-serif;
 
+}
+
+body {
+background-color: blanchedalmond;
 }
 
 * {
@@ -35,6 +39,8 @@
     align-items: center;
     align-self: center;
     font-family: var(--font);
+    color: rgb(255, 255, 255);
+    text-shadow: .5px .5px;
     top: 1rem;
 }
 
@@ -44,8 +50,15 @@ ul li {
 }
 
 ul a {
+    
     list-style-type: none;
     text-decoration: none;
+    
+}
+
+ul a:hover {
+    color: blanchedalmond;
+    
 }
 
 /* About Me section styles */
@@ -61,12 +74,14 @@ ul a {
 
 .about h2 {
     align-self: flex-start;
+    padding-top: 1em;
     font-family: var(--font);
     font-weight: 200;
 }
 
 .about img {
     width: 20%;
+    padding: 2em 1em;
     border-radius: 70px 200px 200px 70px;
 }
 
@@ -92,7 +107,15 @@ ul a {
 .card {
     aspect-ratio: 1 / 1.5;
     padding: 0.1rem;
-    /* border: 3px solid hotpink; */
+    
+}
+
+.card__title h2 {
+   justify-content:  center;
+}
+
+.card a {
+    text-decoration: none;
 }
 
 .card__content {
