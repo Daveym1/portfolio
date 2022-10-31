@@ -1,11 +1,12 @@
 :root {
-    --background: rgb(168, 168, 168);
+    --background: #246068;
     --font: Verdana, Geneva, Tahoma, sans-serif;
+    --heading: #82C38D;
 
 }
 
 body {
-background-color: blanchedalmond;
+    background: #202020;
 }
 
 * {
@@ -23,6 +24,7 @@ background-color: blanchedalmond;
     grid-template-columns: auto auto;
     grid-template-areas: "logo menu";
     background-color: var(--background);
+    color: #ffffff80;
 
 }
 
@@ -31,7 +33,7 @@ background-color: blanchedalmond;
     font-family: var(--font);
     font-weight: 200;
     padding-left: 1em; 
-    /* text-shadow: 2px 2px; */
+    
 }
 
 .menu {
@@ -47,17 +49,19 @@ background-color: blanchedalmond;
 ul li {
     display: inline;
     padding: 0.75rem;
+    color: #ffffff80;
 }
 
 ul a {
     
     list-style-type: none;
     text-decoration: none;
+    color: #ffffff80;
     
 }
 
 ul a:hover {
-    color: blanchedalmond;
+    color: #202020;
     
 }
 
@@ -73,10 +77,15 @@ ul a:hover {
 }
 
 .about h2 {
+    color: var(--heading);
     align-self: flex-start;
     padding-top: 1em;
     font-family: var(--font);
     font-weight: 200;
+}
+
+.about p {
+    color: #ffffff80;
 }
 
 .about img {
@@ -87,7 +96,8 @@ ul a:hover {
 
 /* Work section styles */
 
-.work h2 {
+.work > h2 {
+    color: var(--heading);
     font-family: var(--font);
     font-weight: 200;
     padding: 2rem;
@@ -112,17 +122,20 @@ ul a:hover {
 
 .card__title h2 {
    justify-content:  center;
+   
 }
 
 .card a {
     text-decoration: none;
-}
+    color: black;
+    }
 
 .card__content {
     background-color: rgba(255, 255, 255, 0.7);
     align-self: baseline;
     margin: 0.5rem 0.5rem 2rem;
     padding: 0.5rem;
+    padding-bottom: 3rem;
     box-shadow: 0 .25rem 1rem rgb(0, 0, 0 / .1);
 }
 
@@ -140,7 +153,33 @@ ul a:hover {
     object-fit: cover;
 }
 
-@media (min-width: 40em) {
+/* Contact styles */
+
+.contact h2 {
+    color: var(--heading);
+    font-family: var(--font);
+    font-weight: 200;
+    padding: 2rem;
+}
+
+.contact {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid pink;
+}
+
+.contact a {
+    color:#ffffff80;
+}
+
+.contact a:hover {
+    color: #82C38D;
+}
+
+/* Media Queries */
+
+@media (min-width: 580px) {
 
 .card.featured {
     grid-row: span 2;
@@ -152,11 +191,57 @@ ul a:hover {
 }
 
 }
-/* Contact styles */
 
-.contact h2 {
-    font-family: var(--font);
-    font-weight: 200;
-    padding: 2rem;
+@media (max-width: 500px) {
+
+    .header {
+        position: fixed;
+        width: 100%;
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+          "logo"
+          "menu";
+        background-color: var(--background);
+    
+    }
+    
+    .logo {
+        grid-area: logo;
+        text-align: center;
+        font-family: var(--font);
+        font-weight: 200;
+        padding-left: 1em; 
+        
+    }
+
+    .menu {
+        grid-area: menu;
+        text-align: center;
+        align-self: center;
+        font-family: var(--font);
+        color: rgb(255, 255, 255);
+        text-shadow: .5px .5px;
+        top: 1rem;
+        padding: 1em;
+    }
+    
+    ul li {
+        display: inline;
+        padding: 0.75rem;
+    }
+    
+    ul a {
+        
+        list-style-type: none;
+        text-decoration: none;
+        
+    }
+
+    .about {
+        padding-top: 5em;
+    }
+    
 }
+
 
